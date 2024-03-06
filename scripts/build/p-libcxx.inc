@@ -86,13 +86,13 @@ install_libcxx() {
     local libraries
 
     if [[ "${OS}" == "osx" ]]; then
-      libraries=("${LIBCXX_INSTALL}"/lib/*/lib*.dylib)
+      libraries=("${LIBCXX_INSTALL}"/lib/lib*.dylib)
     else
-      libraries=("${LIBCXX_INSTALL}"/lib/*/lib*.so)
+      libraries=("${LIBCXX_INSTALL}"/lib/lib*.so)
     fi
 
     local LLVM_VERSION_MAJOR="${LLVM_VERSION/.*/}"
-    libraries+=("${LIBCXX_INSTALL}"/lib/*/lib*.a)
+    libraries+=("${LIBCXX_INSTALL}"/lib/lib*.a)
 
 
     for p in "${libraries[@]}" ; do
